@@ -41,7 +41,7 @@ public class Menuinfo extends AppCompatActivity implements Serializable {
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
     private ImageView imageView_store;
-    private TextView menuinfo_name, menuinfo_info, menuinfo_price;
+    private TextView menuinfo_name, menuinfo_info, menuinfo_price,menuinfo_sumprice;
     private ArrayList<Store> arrayList_store;
 
 
@@ -55,6 +55,7 @@ public class Menuinfo extends AppCompatActivity implements Serializable {
         menuinfo_name = (TextView) findViewById(R.id.menuinfo_name);
         menuinfo_info = (TextView) findViewById(R.id.menuinfo_info);
         menuinfo_price = (TextView) findViewById(R.id.menuinfo_price);
+        menuinfo_sumprice = (TextView) findViewById(R.id.menuinfo_sumprice);
 
         btn_orderButton = (Button) findViewById(R.id.btn_orderButton);
 
@@ -72,6 +73,7 @@ public class Menuinfo extends AppCompatActivity implements Serializable {
         menuinfo_name.setText(name); //이름을 선언
         menuinfo_info.setText(info); //정보를 선언
         menuinfo_price.setText(price); //가격을 선언
+        menuinfo_sumprice.setText(price);
 
         btn_orderButton.setOnClickListener(new View.OnClickListener() {
 
