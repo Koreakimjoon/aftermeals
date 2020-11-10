@@ -1,6 +1,6 @@
 package com.example.aftermeals.List;
 
-public class List { //가게 정보 내용 입력
+public class List { //가게 정보 내용 입력 -김준
     private String storelist_img, storelist_name, storelist_time, storelist_breaktime, storelist_number;
 
 

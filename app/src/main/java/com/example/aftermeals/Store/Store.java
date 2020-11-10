@@ -1,6 +1,6 @@
 package com.example.aftermeals.Store;
 
-public class Store {
+public class Store { //김준
     private String menu_img;
     private String menu_name;
     private String menu_info;

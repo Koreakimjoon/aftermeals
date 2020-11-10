@@ -1,4 +1,4 @@
-package com.example.aftermeals.Menuinfo;
+package com.example.aftermeals.Menuinfo; //김준
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

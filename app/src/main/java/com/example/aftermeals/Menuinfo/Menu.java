@@ -1,6 +1,6 @@
 package com.example.aftermeals.Menuinfo;
 
-public class Menu { //메뉴에 대한 이름과 가격
+public class Menu { //메뉴에 대한 이름과 가격 -김준
     private String menu_info_name, menu_info_price;
 
 

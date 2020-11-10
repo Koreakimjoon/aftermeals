@@ -20,7 +20,7 @@ import com.example.aftermeals.Menuinfo.Menuinfo;
 
 import java.util.ArrayList;
 
-public class StoreAdpater extends RecyclerView.Adapter<StoreAdpater.CustomViewHolder>{
+public class StoreAdpater extends RecyclerView.Adapter<StoreAdpater.CustomViewHolder>{ //김준
     private ArrayList<Store> arrayList;
     private Context context;
     private int store_count;

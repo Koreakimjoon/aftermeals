@@ -1,4 +1,4 @@
-package com.example.aftermeals.Menuinfo;
+package com.example.aftermeals.Menuinfo; //Menu Adpater -김준
 
 import android.app.Activity;
 import android.content.Context;
