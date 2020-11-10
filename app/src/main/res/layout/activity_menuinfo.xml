@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 작성자 이름 : 김은철
+**** 작성일자 : 2020_10_02
+**** 최종 업데이트 : 2020_10_02
+**** 내용 : -
+-->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="100dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+
+                    android:id="@+id/imageView_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/noodlo"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/menuinfo_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="A초밥 세트"
+                    android:textSize="30sp"
+
+                /> <!-- camera 이미지 (id: imageButton_camera) -->
+
+
+            <!-- 메인 음식이름 (id: et_mainMenuTitle) -->
+
+
+            <TextView
+                android:id="@+id/menuinfo_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="음식설명 : 활어4p+연어4p+초새우1p+유부1p"
+                android:textSize="20sp" /> <!-- 메인 음식이름_부가설명 (id: et_subMenuTitle)-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:background="#686767"/> <!--레이아웃 구분 선 -->
+            <LinearLayout
+                android:id="@+id/menu1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="기본"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/menuinfo_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="13000원"
+                    android:textSize="20sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="원"
+                    android:textSize="20sp" />
+            </LinearLayout> <!--기본가격 레이아웃 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:background="#686767"/> <!--레이아웃 구분 선 -->
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/menuinfo_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"  />
+        <Button
+            android:id="@+id/btn_orderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="bottom"
+            android:text="주문결정" />
+
+
+
+
+        <!-- 하단고정_주문버튼 (id: btn_orderButton) -->
+
+    </LinearLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

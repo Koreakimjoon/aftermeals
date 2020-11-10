@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="#ffffff"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:paddingLeft="14dp"
+                    android:id="@+id/main_textview_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="현재위치(주소)"
+                    android:textSize="15sp"
+                    android:layout_gravity="center_vertical"
+                    android:lineSpacingExtra="6sp"
+                    android:textColor="#4b4b4b"/>
+                <ImageView
+                    android:paddingLeft="7dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/address_icon"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_viewPager_banner"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"/> -->
+
+    <ViewFlipper
+        android:id="@+id/main_vf_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <GridLayout
+        android:id="@+id/main_grid_foodtype"
+        android:layout_width="wrap_content"
+        android:layout_height="241dp"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="3"
+        android:layout_marginBottom="15dp">
+
+
+        <ImageButton
+            android:id="@+id/main_grid_img0"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/korean"
+            android:background="#ffffff"
+            android:scaleType="centerInside"
+            />
+
+        <ImageButton
+            android:id="@+id/main_grid_img1"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/japan"
+            android:background="#ffffff"
+            android:scaleType="centerInside"
+            />
+
+        <ImageButton
+            android:id="@+id/main_grid_img2"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/china"
+            android:background="#ffffff"
+            android:scaleType="centerInside"
+            />
+
+        <ImageButton
+            android:id="@+id/main_grid_img3"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/chicken"
+            android:background="#ffffff"
+            android:scaleType="centerInside"
+            />
+
+        <ImageButton
+            android:id="@+id/main_grid_img4"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/pizza"
+            android:background="#ffffff"
+            android:scaleType="centerCrop"
+            />
+
+        <ImageButton
+            android:id="@+id/main_grid_img5"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/meat"
+            android:background="#ffffff"
+            android:scaleType="centerCrop"
+            />
+
+        <ImageButton
+            android:id="@+id/main_grid_img6"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/snack_bar"
+            android:background="#ffffff"
+            android:scaleType="centerCrop"
+            />
+
+        <ImageButton
+            android:id="@+id/main_grid_img7"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/soup"
+            android:layout_marginBottom="15dp"
+            android:background="#ffffff"
+            android:scaleType="centerCrop"
+            />
+    </GridLayout>
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="50dp"/>
+
+    <include layout="@layout/activity_main_bottom"></include>
+
+</LinearLayout>

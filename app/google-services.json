@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "997813882243",
+    "firebase_url": "https://duproject-a57a3.firebaseio.com",
+    "project_id": "duproject-a57a3",
+    "storage_bucket": "duproject-a57a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997813882243:android:3ffab30139eedac843bab6",
+        "android_client_info": {
+          "package_name": "com.example.aftermeals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997813882243-0mhk06u6n9qfa7k9ue3tcelo0fboecgf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aftermeals",
+            "certificate_hash": "b06c3c13a648e52bf60d2cf84c9999c68e9fc803"
+          }
+        },
+        {
+          "client_id": "997813882243-gdtpieenjqmi91d703la2bppc2cij775.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL8WqDznujIJqGcrt_hJRNyASQ55Na_gc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997813882243-gdtpieenjqmi91d703la2bppc2cij775.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

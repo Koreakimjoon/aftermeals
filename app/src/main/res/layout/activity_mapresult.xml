@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <ImageView
+            android:id="@+id/mapresult_imageview_back"
+            android:layout_marginLeft="20dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/back_icon"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_horizontal"
+            android:text="현재 주소"
+            android:textColor="#323232"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/mapresult_frame_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/mapresult_imageview_marker"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/marker"
+            android:layout_gravity="center_horizontal|center_vertical"/>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="312dp"
+        android:layout_height="206dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/mapresult_textview_firstaddress"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:textColor="#111111"
+            />
+        <EditText
+            android:id="@+id/mapresult_edittext_detailaddress"
+            android:layout_marginBottom="31dp"
+            android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:layout_height="48dp"
+            android:textColorHint="#111111"
+            android:includeFontPadding="false"
+            android:textSize="20dp"
+            android:hint="상세주소를 입력하세요."
+            android:theme="@style/EditTextTheme"/>
+
+        <Button
+            android:id="@+id/mapresult_button_finish"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#111111"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="완료"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>

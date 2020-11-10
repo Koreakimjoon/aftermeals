@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services' //google firevbase 연동 -준
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "com.example.aftermeals"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true; // 파이어베이스 연동 -준 false -> true로 변경
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    //noinspection GradleCompatible,GradleCompatible
+    implementation 'com.android.support:design:28.0.0' // BottomNavigationView 사용
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.firebase:firebase-database:16.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2' //androidX
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0' //androidX
+    implementation 'com.github.bumptech.glide:glide:4.7.1' // glide
+    //noinspection GradleCompatible,GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    api('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
+        exclude module: 'support-v4'
+    } //뷰페이져
+    implementation platform('com.google.firebase:firebase-bom:25.12.0') //google firebase 연동 -준
+    implementation 'com.google.firebase:firebase-analytics' //google firebase 연동 -준
+    implementation 'com.google.firebase:firebase-analytics:17.2.1' //파이어베이스 앱 분석
+    implementation 'com.google.firebase:firebase-core:17.2.1' // 파이어베이스 코어
+    implementation 'com.google.firebase:firebase-auth:19.1.0' // 파이어베이스 인증
+    implementation 'com.firebaseui:firebase-ui-auth:6.2.0' // 파이어베이스 인증2
+    implementation 'com.github.bumptech.glide:glide:4.9.0' //글라이드 이미지 로딩
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0' //글라이드 이미지 로딩2
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0' //리사이클러뷰
+    implementation 'com.google.firebase:firebase-firestore:21.7.1'
+}

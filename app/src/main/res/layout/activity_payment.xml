@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/payment_img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="예약하기"
+            android:textColor="#111111"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomeActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="매장 정보"
+                    android:textColor="#111111"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/payment_textview_address"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="성남그어딘가"
+                    android:textColor="#111111"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/payment_textview_roadaddress"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="[도로명]어딘가"
+                    android:textColor="#505050"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/payment_textview_storenumber"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="010-1234-1234"
+                    android:textColor="#505050"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/payment_btn_callbutton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#000000"
+                    android:text="전화걸기"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="고객 정보"
+                    android:textColor="#111111"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/payment_textview_customername"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="하성빈"
+                    android:textColor="#111111"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/payment_textview_customernumber"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="010-2345-2345"
+                    android:textColor="#505050"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/payment_btn_numberchange"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#000000"
+                    android:text="변경"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="요청 사항"
+                    android:textColor="#111111"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/payment_edittext_detailorder"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="요청사항을 입력하세요."
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textColorHint="#878787"
+                    android:textSize="16sp"
+                    android:theme="@style/EditTextTheme"></androidx.appcompat.widget.AppCompatEditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="결제수단 선택"
+                    android:textColor="#111111"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ToggleButton
+                    android:id="@+id/payment_togglebtn_btn0"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:onClick="onToggleClicked"
+                    android:text="토스"
+                    android:textOff="토스"
+                    android:textOn="토스" />
+
+                <ToggleButton
+                    android:id="@+id/payment_togglebtn_btn1"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:onClick="onToggleClicked"
+                    android:text="네이버페이"
+                    android:textOff="네이버페이"
+                    android:textOn="네이버페이" />
+
+                <ToggleButton
+                    android:id="@+id/payment_togglebtn_btn2"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:onClick="onToggleClicked"
+                    android:text="카카오페이"
+                    android:textOff="카카오페이"
+                    android:textOn="카카오페이" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:text="예약 주문 내역"
+                    android:textColor="#111111"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+
+                <TextView
+                    android:id="@+id/payment_textview_menu0"
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:singleLine="true"
+                    android:text="아몰랑"
+                    android:textColor="#111111"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/payment_textview_price0"
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:singleLine="true"
+                    android:text="10,000원"
+                    android:textColor="#111111"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/payment_textview_menu1"
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:singleLine="true"
+                    android:text="아몰랑2"
+                    android:textColor="#111111"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/payment_textview_price1"
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:singleLine="true"
+                    android:text="20,000원"
+                    android:textColor="#111111"
+                    android:textSize="20sp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:singleLine="true"
+                    android:text="총 합계"
+                    android:textColor="#111111"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/payment_textview_priceall"
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:singleLine="true"
+                    android:text="30,000원"
+                    android:textColor="#111111"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/payment_btn_payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#000000"
+                    android:text="결제하기"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

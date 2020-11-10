@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PostActivity">
+
+    <EditText
+        android:id="@+id/post_edit_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="제목"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/post_edit_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="닉네임"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/post_edit_contents"
+        android:layout_width="match_parent"
+        android:layout_height="294dp"
+        android:layout_margin="20dp"
+        android:background="@null"
+        android:hint="내용"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="16sp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/post_button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@android:color/holo_blue_light"
+        android:layout_gravity="center_horizontal"
+        android:text="저장하기" />
+
+</LinearLayout>
