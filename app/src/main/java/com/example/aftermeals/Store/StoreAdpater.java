@@ -66,12 +66,6 @@ public class StoreAdpater extends RecyclerView.Adapter<StoreAdpater.CustomViewHo
                         intent.putExtra("StorearrayList",store_count); //엑티비티인 storeinfo_***에서 값을 받아온것을 storearrayList로 넘김 조건문 쓸때 필요함.
                         v.getContext().startActivity(intent);
 
-
-
-
-
-
-
             }
         });
 

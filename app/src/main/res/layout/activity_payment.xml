@@ -152,7 +152,327 @@
                     android:singleLine="true"
                     android:textColorHint="#878787"
                     android:textSize="16sp"
-                    android:theme="@style/EditTextTheme"></androidx.appcompat.widget.AppCompatEditText>
+                    android:theme="@style/EditTextTheme">
+                </androidx.appcompat.widget.AppCompatEditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/reservation_ChooseTable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="테이블 선택하기"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/reservation_okreser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="fill_vertical"
+                            android:text="  파란색 : 예약 가능 "
+                            android:textColor="#000000"
+                            android:textSize="14sp">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/reservation_noreser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="fill_vertical"
+                            android:text="  회색 : 예약 됨 (불가능) "
+                            android:textColor="#000000"
+                            android:textSize="14sp">
+                        </TextView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/reservation_btn_41"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="테이블 (4인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                        <Button
+                            android:id="@+id/reservation_btn_42"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="테이블 (4인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                        <Button
+                            android:id="@+id/reservation_btn_43"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="테이블 (4인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/reservation_btn_61"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text = "테이블 (6인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/reservation_btn_62"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text = "테이블 (6인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_couple1"
+                            android:layout_weight="1"
+                            android:text = "커플석 (2인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_couple2"
+                            android:layout_weight="1"
+                            android:text = "커플석 (2인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_couple3"
+                            android:layout_weight="1"
+                            android:text = "커플석 (2인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_couple4"
+                            android:layout_weight="1"
+                            android:text = "커플석 (2인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_family1"
+                            android:layout_weight="1"
+                            android:text = "가족 전용석 (4인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_famliy2"
+                            android:layout_weight="1"
+                            android:text = "가족 전용석 (4인)"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_person1"
+                            android:layout_weight="1"
+                            android:text = "1인 테이블"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_person2"
+                            android:layout_weight="1"
+                            android:text = "1인 테이블"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_person3"
+                            android:layout_weight="1"
+                            android:text = "1인 테이블"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_person4"
+                            android:layout_weight="1"
+                            android:text = "1인 테이블"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_person5"
+                            android:layout_weight="1"
+                            android:text = "1인 테이블"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_person6"
+                            android:layout_weight="1"
+                            android:text = "1인 테이블"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_person7"
+                            android:layout_weight="1"
+                            android:text = "1인 테이블"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_person8"
+                            android:layout_weight="1"
+                            android:text = "1인 테이블"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reservation_btn_person9"
+                            android:layout_weight="1"
+                            android:text = "1인 테이블"
+                            android:textColor="#000000"
+                            android:textStyle="bold">
+                        </Button>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -289,7 +609,6 @@
                     android:textColor="#FFFFFF" />
 
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

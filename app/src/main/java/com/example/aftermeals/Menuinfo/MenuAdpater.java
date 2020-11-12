@@ -1,37 +1,37 @@
 package com.example.aftermeals.Menuinfo; //Menu Adpater -김준
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.aftermeals.R;
-import com.example.aftermeals.Store.Store;
 
 import java.util.ArrayList;
+
 
 public class MenuAdpater extends RecyclerView.Adapter<MenuAdpater.CustomViewHolder> {
     private ArrayList<Menu> arrayList;
     private Context context;
+    public String a;
+
 
 
     public MenuAdpater(ArrayList<Menu> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
+
+
 
 
     @NonNull
@@ -43,11 +43,21 @@ public class MenuAdpater extends RecyclerView.Adapter<MenuAdpater.CustomViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final CustomViewHolder holder, final int position) {
        holder.menu_info_list_item_name.setText(arrayList.get(position).getMenu_info_name());
        holder.menu_info_list_item_price.setText(arrayList.get(position).getMenu_info_price());
-      
+       holder.menu_info_list_item_check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+           @Override
+           public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            if(holder.menu_info_list_item_check.isChecked() == true){
+                a = holder.menu_info_list_item_price.toString();
+                System.out.println(a);
 
+            } else{
+                a = null;
+            }
+           }
+       });
 
     }
 
@@ -58,20 +68,20 @@ public class MenuAdpater extends RecyclerView.Adapter<MenuAdpater.CustomViewHold
 
 
 
-    public class CustomViewHolder extends RecyclerView.ViewHolder{
+    public class CustomViewHolder extends RecyclerView.ViewHolder {
         CheckBox menu_info_list_item_check;
         TextView menu_info_list_item_price, menu_info_list_item_name;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-
-
-            this.menu_info_list_item_price= itemView.findViewById(R.id.menu_info_list_item_price);
+            this.menu_info_list_item_price = itemView.findViewById(R.id.menu_info_list_item_price);
             this.menu_info_list_item_name = itemView.findViewById(R.id.menu_info_list_item_name);
             this.menu_info_list_item_check = itemView.findViewById(R.id.menu_info_list_item_check);
 
-        }
 
+        }
     }
 
 }
+
+

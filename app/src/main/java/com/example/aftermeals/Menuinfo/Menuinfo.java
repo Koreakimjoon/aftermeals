@@ -6,10 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,7 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Menuinfo extends AppCompatActivity implements Serializable {
+public class Menuinfo extends AppCompatActivity implements Serializable{
 
 
     private RecyclerView recyclerView;
@@ -42,8 +45,15 @@ public class Menuinfo extends AppCompatActivity implements Serializable {
     private DatabaseReference databaseReference;
     private ImageView imageView_store;
     private TextView menuinfo_name, menuinfo_info, menuinfo_price,menuinfo_sumprice;
-    private ArrayList<Store> arrayList_store;
+    private String data;
 
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getData() {
+        return data;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -256,6 +266,7 @@ public class Menuinfo extends AppCompatActivity implements Serializable {
                     arrayList.add(menu);
                 }
                 adapter.notifyDataSetChanged();
+                System.out.println("김준");
             }
 
             @Override
@@ -265,10 +276,17 @@ public class Menuinfo extends AppCompatActivity implements Serializable {
             }
         });
 
+
         adapter = new MenuAdpater(arrayList, this);
+
         recyclerView.setAdapter(adapter);
 
 
 
+
+
+
     }
+
+
 }
