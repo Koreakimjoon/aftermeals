@@ -51,8 +51,8 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
         this.data = data;
     }
 
-    public String getData() {
-        return data;
+    public String getData(String data) {
+        return this.data;
     }
 
     @Override
@@ -85,13 +85,24 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
         menuinfo_price.setText(price); //가격을 선언
         menuinfo_sumprice.setText(price);
 
+        System.out.println(data);
+
+
         btn_orderButton.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                finish();
+                /*Intent intent = new Intent();
+                finish(); */
+                if(data !=null){
+                    Integer Sum = null;
+                    Sum = Integer.parseInt(menuinfo_price.getText().toString());
+                    int Sum2 = Integer.parseInt(data.toString());
+                    int a = Sum + Sum2;
+                    menuinfo_sumprice.setText("" + a);
+                }else {
+                    menuinfo_sumprice.setText(menuinfo_price.getText());
+
+                }
             }
 
 
@@ -265,8 +276,8 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
                     Menu menu = snapshot.getValue(Menu.class);
                     arrayList.add(menu);
                 }
+
                 adapter.notifyDataSetChanged();
-                System.out.println("김준");
             }
 
             @Override
@@ -276,10 +287,12 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
             }
         });
 
-
         adapter = new MenuAdpater(arrayList, this);
-
         recyclerView.setAdapter(adapter);
+
+
+
+
 
 
 

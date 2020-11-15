@@ -98,7 +98,6 @@
                 android:layout_height="2dp"
                 android:layout_centerInParent="true"
                 android:background="#686767"/> <!--레이아웃 구분 선 -->
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -109,7 +108,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"  />
+                    android:layout_marginLeft="10dp"
+                    />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

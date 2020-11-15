@@ -34,6 +34,7 @@ public class MenuAdpater extends RecyclerView.Adapter<MenuAdpater.CustomViewHold
 
 
 
+
     @NonNull
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -50,11 +51,10 @@ public class MenuAdpater extends RecyclerView.Adapter<MenuAdpater.CustomViewHold
            @Override
            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             if(holder.menu_info_list_item_check.isChecked() == true){
-                a = holder.menu_info_list_item_price.toString();
-                System.out.println(a);
-
+                ((Menuinfo)context).setData(holder.menu_info_list_item_price.getText().toString());
+                System.out.println(holder.menu_info_list_item_price.toString());
             } else{
-                a = null;
+                ((Menuinfo)context).setData(null);
             }
            }
        });
