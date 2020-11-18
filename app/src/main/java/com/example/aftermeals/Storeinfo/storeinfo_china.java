@@ -48,9 +48,9 @@ public class storeinfo_china extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storeinfo_china);
 
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String number= intent.getStringExtra("number");
+        final Intent intent = getIntent();
+        final String name = intent.getStringExtra("name");
+        final String number= intent.getStringExtra("number");
         String img = intent.getStringExtra("img");
         int Listcount = intent.getIntExtra("List_count",0);
 
@@ -90,8 +90,8 @@ public class storeinfo_china extends AppCompatActivity {
         storeinfo_china_btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { // 뒤로가기 버튼 눌러서 뒤로 가게해주는 코드 - 서강호
-                Intent intent = new Intent(getApplicationContext(), storelist_china.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(getApplicationContext(), storelist_china.class);
+                startActivity(intent1);
             }
         });
 
@@ -99,8 +99,10 @@ public class storeinfo_china extends AppCompatActivity {
         storeinfo_china_btn_mirror.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), payment.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(getApplicationContext(), payment.class);
+                intent2.putExtra("name",name);
+                intent2.putExtra("number",number);
+                startActivity(intent2);
             }
         });
 

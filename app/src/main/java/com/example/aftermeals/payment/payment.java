@@ -21,11 +21,17 @@ public class payment extends AppCompatActivity {
     TextView payment_textview_price0;
     TextView payment_textview_number;//김은철 작성
     Button payment_btn_callbutton; //김은철 작성
+    TextView payment_textview_address, payment_textview_storenumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+
+        Intent intent = getIntent();
+        String china_pyment  = intent.getStringExtra("china_pyment");
+        String name = intent.getStringExtra("name");
+        final String number = intent.getStringExtra("number");
 
         final String storeNumber; //김은철 작성
 //        DisplayMetrics dm = getApplicationContext().getResources().getDisplayMetrics(); //디바이스 화면크기를 구하기위해
@@ -35,6 +41,8 @@ public class payment extends AppCompatActivity {
         payment_textview_price0 = findViewById(R.id.payment_textview_price0);
         payment_btn_callbutton = (Button)findViewById(R.id.payment_btn_callbutton); //김은철 작성
         payment_textview_number = (TextView)findViewById(R.id.payment_textview_storenumber);//김은철 작성
+        payment_textview_address = findViewById(R.id.payment_textview_address);
+        payment_textview_storenumber = findViewById(R.id.payment_textview_storenumber);
 
         storeNumber = (String)payment_textview_number.getText();//김은철 작성
 //        dial = (Button) findViewById(R.id.btn);
@@ -57,15 +65,16 @@ public class payment extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //이벤트 동작
-                Intent callButton = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+storeNumber));//김은철 작성
+                Intent callButton = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number));//김은철 작성
                 startActivity(callButton);//김은철 작성
             }
         });
 
-        Intent intent = getIntent();
-        String china_pyment  = intent.getStringExtra("china_pyment");
 
 
+        payment_textview_address.setText(name);
         payment_textview_price0.setText(china_pyment);
+        payment_textview_storenumber.setText(number);
+
     }
 }
