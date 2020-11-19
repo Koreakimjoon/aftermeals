@@ -17,13 +17,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.aftermeals.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MenuAdpater extends RecyclerView.Adapter<MenuAdpater.CustomViewHolder> {
     private ArrayList<Menu> arrayList;
     private Context context;
-    public String a;
-
 
 
     public MenuAdpater(ArrayList<Menu> arrayList, Context context) {
@@ -47,11 +46,13 @@ public class MenuAdpater extends RecyclerView.Adapter<MenuAdpater.CustomViewHold
     public void onBindViewHolder(@NonNull final CustomViewHolder holder, final int position) {
        holder.menu_info_list_item_name.setText(arrayList.get(position).getMenu_info_name());
        holder.menu_info_list_item_price.setText(arrayList.get(position).getMenu_info_price());
+       holder.menu_info_list_item_check.setChecked(arrayList.get(position).isChecked());
+       holder.menu_info_list_item_check.setTag(arrayList.get(position));
        holder.menu_info_list_item_check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
            @Override
            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             if(holder.menu_info_list_item_check.isChecked() == true){
-                ((Menuinfo)context).setData(holder.menu_info_list_item_price.getText().toString());
+                 ((Menuinfo)context).setData(holder.menu_info_list_item_price.toString());
                 System.out.println(holder.menu_info_list_item_price.toString());
             } else{
                 ((Menuinfo)context).setData(null);

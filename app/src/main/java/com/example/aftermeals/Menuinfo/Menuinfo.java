@@ -6,25 +6,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.aftermeals.List.List;
-import com.example.aftermeals.List.ListAdapter_china;
 import com.example.aftermeals.R;
-import com.example.aftermeals.Store.Store;
-import com.example.aftermeals.Store.StoreAdpater;
-import com.example.aftermeals.Storeinfo.storeinfo_china;
-import com.example.aftermeals.Storeinfo.storeinfo_china2;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -51,8 +42,8 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
         this.data = data;
     }
 
-    public String getData(String data) {
-        return this.data;
+    public String getData() {
+        return data;
     }
 
     @Override
@@ -92,20 +83,18 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
             @Override
             public void onClick(View v) {
                 /*Intent intent = new Intent();
-                finish(); */
-                if(data !=null){
+                finish();*/
+                if (data != null) {
                     Integer Sum = null;
                     Sum = Integer.parseInt(menuinfo_price.getText().toString());
                     int Sum2 = Integer.parseInt(data.toString());
                     int a = Sum + Sum2;
                     menuinfo_sumprice.setText("" + a);
-                }else {
+                } else {
                     menuinfo_sumprice.setText(menuinfo_price.getText());
 
                 }
             }
-
-
         });
 
         recyclerView = findViewById(R.id.menuinfo_recyclerview);

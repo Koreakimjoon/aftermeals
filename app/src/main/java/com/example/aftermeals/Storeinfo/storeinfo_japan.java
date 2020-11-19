@@ -51,8 +51,8 @@ public class storeinfo_japan extends AppCompatActivity {
         storeinfo_japan_img_japan1 = findViewById(R.id.storeinfo_japan_img_japan1);
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String number= intent.getStringExtra("number");
+        final String name = intent.getStringExtra("name");
+        final String number= intent.getStringExtra("number");
         String img = intent.getStringExtra("img");
         int Listcount = intent.getIntExtra("List_count",4);
         Glide.with(this).load(img).into(storeinfo_japan_img_japan1);
@@ -88,8 +88,10 @@ public class storeinfo_japan extends AppCompatActivity {
         storeinfo_japan_btn_mirror.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), payment.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(getApplicationContext(), payment.class);
+                intent2.putExtra("name",name);
+                intent2.putExtra("number",number);
+                startActivity(intent2);
             }
         });
 

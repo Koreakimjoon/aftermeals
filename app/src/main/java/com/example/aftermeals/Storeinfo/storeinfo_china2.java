@@ -49,9 +49,9 @@ public class storeinfo_china2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storeinfo_china2);
 
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String number= intent.getStringExtra("number");
+        final Intent intent = getIntent();
+        final String name = intent.getStringExtra("name");
+        final String number= intent.getStringExtra("number");
         String img = intent.getStringExtra("img");
         int Listcount = intent.getIntExtra("List_count",1);
 
@@ -93,8 +93,11 @@ public class storeinfo_china2 extends AppCompatActivity {
         storeinfo_china_btn_mirror2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), payment.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(getApplicationContext(), payment.class);
+                intent2.putExtra("name",name);
+                intent2.putExtra("number",number);
+                startActivity(intent2);
+
             }
         });
 
