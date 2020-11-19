@@ -55,8 +55,8 @@ public class storeinfo_china extends AppCompatActivity {
         int Listcount = intent.getIntExtra("List_count",0);
 
 
-      //  mycount = Listcount;
-       // china_context = this;
+        //  mycount = Listcount;
+        // china_context = this;
 
 
 
@@ -71,7 +71,7 @@ public class storeinfo_china extends AppCompatActivity {
 
         Glide.with(this).load(img).into(storeinfo_china_img);
         storeinfo_china_text_storename.setText(name);
-       storeinfo_china_text_storenumber.setText(number);
+        storeinfo_china_text_storenumber.setText(number);
 
 
         recyclerView = findViewById(R.id.recyclerView_china);

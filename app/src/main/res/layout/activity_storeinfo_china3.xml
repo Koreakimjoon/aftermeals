@@ -68,7 +68,14 @@
             android:textStyle="bold"
             />
 
-
+        <Button
+            android:id="@+id/storeinfo_china_btn3_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="찜 하기"
+            android:background="#ffffff"
+            android:textColor="#ff0000"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_china3"

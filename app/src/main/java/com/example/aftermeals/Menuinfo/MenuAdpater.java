@@ -52,7 +52,7 @@ public class MenuAdpater extends RecyclerView.Adapter<MenuAdpater.CustomViewHold
            @Override
            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             if(holder.menu_info_list_item_check.isChecked() == true){
-                 ((Menuinfo)context).setData(holder.menu_info_list_item_price.toString());
+                 ((Menuinfo)context).setData(arrayList.get(position).getMenu_info_price());
                 System.out.println(holder.menu_info_list_item_price.toString());
             } else{
                 ((Menuinfo)context).setData(null);

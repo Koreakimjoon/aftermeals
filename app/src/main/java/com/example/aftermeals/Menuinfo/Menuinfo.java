@@ -78,16 +78,14 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
 
         System.out.println(data);
 
-
         btn_orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /*Intent intent = new Intent();
                 finish();*/
                 if (data != null) {
-                    Integer Sum = null;
-                    Sum = Integer.parseInt(menuinfo_price.getText().toString());
-                    int Sum2 = Integer.parseInt(data.toString());
+                    Integer Sum = Integer.parseInt(menuinfo_price.getText().toString());
+                    int Sum2 = Integer.parseInt(data);
                     int a = Sum + Sum2;
                     menuinfo_sumprice.setText("" + a);
                 } else {
@@ -252,12 +250,12 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
                 break;
 
 
-            }
+        }
 
 
 
 
-           databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 arrayList.clear();
