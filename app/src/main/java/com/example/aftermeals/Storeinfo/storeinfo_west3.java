@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class storeinfo_west3 extends AppCompatActivity {
+public class storeinfo_west3 extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton storeinfo_west3_btn_back, storeinfo_west3_btn_mirror;
     ImageView storeinfo_west3_img_west1;
@@ -68,6 +69,7 @@ public class storeinfo_west3 extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         database = FirebaseDatabase.getInstance();
+        findViewById(R.id.storeinfo_west3_btn_choice).setOnClickListener(this);
 
 
 
@@ -116,5 +118,17 @@ public class storeinfo_west3 extends AppCompatActivity {
 
         adapter = new StoreAdpater(arrayList, this,Listcount);
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View view) {
+        databaseReference = database.getReference();
+        databaseReference.child("Choicestore").child("choicewest3").child("choicestore_name").setValue("굽네치킨");
+        databaseReference.child("Choicestore").child("choicewest3").child("choicestore_img").setValue("https://firebasestorage.googleapis.com/v0/b/duproject-a57a3.appspot.com/o/%EC%B9%98%ED%82%A8%2F%EA%B5%BD%EB%84%A4%2F%EA%B5%BD%EB%84%A4.jpg?alt=media&token=ede690f8-a235-43f9-b034-52996ccd6fe7");
+        databaseReference.child("Choicestore").child("choicewest3").child("choicestore_number").setValue("050-6469-4043");
+        databaseReference.child("Choicestore").child("choicewest3").child("choicestore_time").setValue("11:00 ~ 01:40");
+        databaseReference.child("Choicestore").child("choicewest3").child("choicestore_breaktime").setValue("19:00 ~ 20:00");
+
+        Toast.makeText(this, "완료", Toast.LENGTH_SHORT).show();
     }
 }

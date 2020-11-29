@@ -2,6 +2,7 @@ package com.example.aftermeals.Menuinfo; //Menu Adpater -김준
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.ClipData;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,11 +24,17 @@ import java.util.List;
 public class MenuAdpater extends RecyclerView.Adapter<MenuAdpater.CustomViewHolder> {
     private ArrayList<Menu> arrayList;
     private Context context;
+    private MenuListener menuListener;
 
 
-    public MenuAdpater(ArrayList<Menu> arrayList, Context context) {
+
+    public MenuAdpater(ArrayList<Menu> arrayList, Context context, MenuListener menuListener) {
         this.arrayList = arrayList;
         this.context = context;
+        this.menuListener = menuListener;
+    }
+    public interface MenuListener{
+        void clickBtn(String data);
     }
 
 
@@ -53,6 +60,7 @@ public class MenuAdpater extends RecyclerView.Adapter<MenuAdpater.CustomViewHold
            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             if(holder.menu_info_list_item_check.isChecked() == true){
                  ((Menuinfo)context).setData(arrayList.get(position).getMenu_info_price());
+                 menuListener.clickBtn(arrayList.get(position).getMenu_info_price());
                 System.out.println(holder.menu_info_list_item_price.toString());
             } else{
                 ((Menuinfo)context).setData(null);

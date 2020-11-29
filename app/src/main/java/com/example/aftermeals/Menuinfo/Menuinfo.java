@@ -2,6 +2,7 @@ package com.example.aftermeals.Menuinfo; //김준
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,6 +38,8 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
     private ImageView imageView_store;
     private TextView menuinfo_name, menuinfo_info, menuinfo_price,menuinfo_sumprice;
     private String data;
+    private int a[] = new int[10];
+    public int pricelast = 0;
 
     public void setData(String data) {
         this.data = data;
@@ -56,7 +59,8 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
         menuinfo_name = (TextView) findViewById(R.id.menuinfo_name);
         menuinfo_info = (TextView) findViewById(R.id.menuinfo_info);
         menuinfo_price = (TextView) findViewById(R.id.menuinfo_price);
-        menuinfo_sumprice = (TextView) findViewById(R.id.menuinfo_sumprice);
+
+
 
         btn_orderButton = (Button) findViewById(R.id.btn_orderButton);
 
@@ -64,7 +68,7 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
         String img = intent.getStringExtra("menu_img"); //인텐트로 넘어온값을 불러와서 img로 선언
         String name = intent.getStringExtra("menu_name"); //인텐트로 넘어온값을 불러와서 name로 선언
         String info = intent.getStringExtra("menu_info"); //인텐트로 넘어온값을 불러와서 info로 선언
-        String price = intent.getStringExtra("menu_price"); //인텐트로 넘어온값을 불러와서 price로 선언
+        final String price = intent.getStringExtra("menu_price"); //인텐트로 넘어온값을 불러와서 price로 선언
         final int count = intent.getIntExtra("count", 1); //인텐트로 넘어온 menu에 포지션을 불러와서 count로 선언
         int StorearrayList = intent.getIntExtra("StorearrayList", 0); //인텐트로 storeinfo에 포지션값을을 불러와서 storearraylist로 선언
 
@@ -74,24 +78,15 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
         menuinfo_name.setText(name); //이름을 선언
         menuinfo_info.setText(info); //정보를 선언
         menuinfo_price.setText(price); //가격을 선언
-        menuinfo_sumprice.setText(price);
-
-        System.out.println(data);
 
         btn_orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent();
-                finish();*/
-                if (data != null) {
-                    Integer Sum = Integer.parseInt(menuinfo_price.getText().toString());
-                    int Sum2 = Integer.parseInt(data);
-                    int a = Sum + Sum2;
-                    menuinfo_sumprice.setText("" + a);
-                } else {
-                    menuinfo_sumprice.setText(menuinfo_price.getText());
-
-                }
+                Intent intent = new Intent();
+                intent.putExtra("finalprice",pricelast);
+                intent.putExtra("finalname",pricelast);
+                setResult(RESULT_OK,intent);
+                finish();
             }
         });
 
@@ -274,16 +269,17 @@ public class Menuinfo extends AppCompatActivity implements Serializable{
             }
         });
 
-        adapter = new MenuAdpater(arrayList, this);
+        adapter = new MenuAdpater(arrayList, this, new MenuAdpater.MenuListener() {
+            @Override
+            public void clickBtn(String data) {
+                Toast.makeText(getApplicationContext(), data, Toast.LENGTH_SHORT).show();
+                int Sum = Integer.parseInt(menuinfo_price.getText().toString());
+                int Sum2 = Integer.parseInt(data);
+                pricelast = Sum+Sum2;
+                menuinfo_price.setText(pricelast + "");
+            }
+        });
         recyclerView.setAdapter(adapter);
-
-
-
-
-
-
-
-
 
 
     }

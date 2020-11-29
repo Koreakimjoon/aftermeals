@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class storeinfo_west4 extends AppCompatActivity {
+public class storeinfo_west4 extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton storeinfo_west4_btn_back, storeinfo_west4_btn_mirror;
     ImageView storeinfo_west4_img_west1;
@@ -68,6 +69,7 @@ public class storeinfo_west4 extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         database = FirebaseDatabase.getInstance();
+        findViewById(R.id.storeinfo_west4_btn_choice).setOnClickListener(this);
 
 
 
@@ -116,5 +118,17 @@ public class storeinfo_west4 extends AppCompatActivity {
 
         adapter = new StoreAdpater(arrayList, this,Listcount);
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View view) {
+        databaseReference = database.getReference();
+        databaseReference.child("Choicestore").child("choicewest4").child("choicestore_name").setValue("푸라닭");
+        databaseReference.child("Choicestore").child("choicewest4").child("choicestore_img").setValue("https://firebasestorage.googleapis.com/v0/b/duproject-a57a3.appspot.com/o/%EC%B9%98%ED%82%A8%2F%ED%91%B8%EB%9D%BC%EB%8B%A5%2F%ED%91%B8%EB%9D%BC%EB%8B%AD.jpg?alt=media&token=c3cabafb-384e-4209-a8b0-06354bb9edb6");
+        databaseReference.child("Choicestore").child("choicewest4").child("choicestore_number").setValue("050-6381-2833");
+        databaseReference.child("Choicestore").child("choicewest4").child("choicestore_time").setValue("11:00 ~ 03:00");
+        databaseReference.child("Choicestore").child("choicewest4").child("choicestore_breaktime").setValue("19:30 ~ 20:30");
+
+        Toast.makeText(this, "완료", Toast.LENGTH_SHORT).show();
     }
 }

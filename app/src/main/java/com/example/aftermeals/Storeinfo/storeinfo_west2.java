@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class storeinfo_west2 extends AppCompatActivity {
+public class storeinfo_west2 extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton storeinfo_west2_btn_back, storeinfo_west2_btn_mirror;
     ImageView storeinfo_west2_img_west1;
@@ -68,6 +69,7 @@ public class storeinfo_west2 extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         database = FirebaseDatabase.getInstance();
+        findViewById(R.id.storeinfo_west2_btn_choice).setOnClickListener(this);
 
 
 
@@ -116,5 +118,17 @@ public class storeinfo_west2 extends AppCompatActivity {
 
         adapter = new StoreAdpater(arrayList, this,Listcount);
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View view) {
+        databaseReference = database.getReference();
+        databaseReference.child("Choicestore").child("choicewest2").child("choicestore_name").setValue("BHC");
+        databaseReference.child("Choicestore").child("choicewest2").child("choicestore_img").setValue("https://firebasestorage.googleapis.com/v0/b/duproject-a57a3.appspot.com/o/%EC%B9%98%ED%82%A8%2Fbhc%2Fbhc.jpg?alt=media&token=31d3e9e5-4c3a-4ff6-9819-ac3a9431b9f5");
+        databaseReference.child("Choicestore").child("choicewest2").child("choicestore_number").setValue("050-7886-2276");
+        databaseReference.child("Choicestore").child("choicewest2").child("choicestore_time").setValue("12:00 ~ 23:30");
+        databaseReference.child("Choicestore").child("choicewest2").child("choicestore_breaktime").setValue("15:30 ~ 16:30");
+
+        Toast.makeText(this, "완료", Toast.LENGTH_SHORT).show();
     }
 }

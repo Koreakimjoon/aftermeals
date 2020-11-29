@@ -28,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class storeinfo_china2 extends AppCompatActivity {
+public class storeinfo_china2 extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton storeinfo_china_btn_back2, storeinfo_china_btn_mirror2;
     ImageView storeinfo_china_img2;
@@ -49,9 +49,9 @@ public class storeinfo_china2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storeinfo_china2);
 
-        final Intent intent = getIntent();
-        final String name = intent.getStringExtra("name");
-        final String number= intent.getStringExtra("number");
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        String number= intent.getStringExtra("number");
         String img = intent.getStringExtra("img");
         int Listcount = intent.getIntExtra("List_count",1);
 
@@ -75,6 +75,7 @@ public class storeinfo_china2 extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         database = FirebaseDatabase.getInstance();
+        findViewById(R.id.storeinfo_china2_btn_choice).setOnClickListener(this);
 
         storeinfo_china_btn_mirror2 = (ImageButton) findViewById(R.id.storeinfo_china2_btn_mirror);
         storeinfo_china_btn_back2 = (ImageButton) findViewById(R.id.storeinfo_china2_btn_back);
@@ -93,11 +94,8 @@ public class storeinfo_china2 extends AppCompatActivity {
         storeinfo_china_btn_mirror2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(getApplicationContext(), payment.class);
-                intent2.putExtra("name",name);
-                intent2.putExtra("number",number);
-                startActivity(intent2);
-
+                Intent intent = new Intent(getApplicationContext(), payment.class);
+                startActivity(intent);
             }
         });
 
@@ -130,4 +128,13 @@ public class storeinfo_china2 extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onClick(View view) {
+        databaseReference = database.getReference();
+        databaseReference.child("Choicestore").child("choicechina2").child("choicestore_name").setValue("참진");
+        databaseReference.child("Choicestore").child("choicechina2").child("choicestore_img").setValue("https://firebasestorage.googleapis.com/v0/b/duproject-a57a3.appspot.com/o/%EC%A4%91%EC%8B%9D%2F%EC%B0%B8%EC%A7%84%2F%EC%B0%B8%EC%A7%84.jpg?alt=media&token=ffc27bdf-4805-4899-93da-b397a3b4cc0b");
+        databaseReference.child("Choicestore").child("choicechina2").child("choicestore_number").setValue("050-6256-1375");
+        databaseReference.child("Choicestore").child("choicechina2").child("choicestore_time").setValue("11:00 ~ 20:00");
+        databaseReference.child("Choicestore").child("choicechina2").child("choicestore_breaktime").setValue("15:00 ~ 16:00");
+    }
 }

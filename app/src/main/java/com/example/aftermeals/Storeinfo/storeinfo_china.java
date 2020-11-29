@@ -28,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class storeinfo_china extends AppCompatActivity {
+public class storeinfo_china extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton storeinfo_china_btn_back, storeinfo_china_btn_mirror;
     ImageView storeinfo_china_img;
@@ -48,20 +48,11 @@ public class storeinfo_china extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storeinfo_china);
 
-        final Intent intent = getIntent();
-        final String name = intent.getStringExtra("name");
-        final String number= intent.getStringExtra("number");
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        String number= intent.getStringExtra("number");
         String img = intent.getStringExtra("img");
         int Listcount = intent.getIntExtra("List_count",0);
-
-
-        //  mycount = Listcount;
-        // china_context = this;
-
-
-
-
-
 
 
         storeinfo_china_text_storename = findViewById(R.id.storeinfo_china_text_storename);
@@ -71,7 +62,7 @@ public class storeinfo_china extends AppCompatActivity {
 
         Glide.with(this).load(img).into(storeinfo_china_img);
         storeinfo_china_text_storename.setText(name);
-        storeinfo_china_text_storenumber.setText(number);
+       storeinfo_china_text_storenumber.setText(number);
 
 
         recyclerView = findViewById(R.id.recyclerView_china);
@@ -81,6 +72,7 @@ public class storeinfo_china extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         database = FirebaseDatabase.getInstance();
+        findViewById(R.id.storeinfo_china_btn_choice).setOnClickListener(this);
 
         storeinfo_china_btn_mirror = (ImageButton) findViewById(R.id.storeinfo_china_btn_mirror);
         storeinfo_china_btn_back = (ImageButton) findViewById(R.id.storeinfo_china_btn_back);
@@ -90,8 +82,8 @@ public class storeinfo_china extends AppCompatActivity {
         storeinfo_china_btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { // 뒤로가기 버튼 눌러서 뒤로 가게해주는 코드 - 서강호
-                Intent intent1 = new Intent(getApplicationContext(), storelist_china.class);
-                startActivity(intent1);
+                Intent intent = new Intent(getApplicationContext(), storelist_china.class);
+                startActivity(intent);
             }
         });
 
@@ -99,10 +91,8 @@ public class storeinfo_china extends AppCompatActivity {
         storeinfo_china_btn_mirror.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(getApplicationContext(), payment.class);
-                intent2.putExtra("name",name);
-                intent2.putExtra("number",number);
-                startActivity(intent2);
+                Intent intent = new Intent(getApplicationContext(), payment.class);
+                startActivity(intent);
             }
         });
 
@@ -134,4 +124,13 @@ public class storeinfo_china extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        databaseReference = database.getReference();
+        databaseReference.child("Choicestore").child("choicechina").child("choicestore_name").setValue("현짜장");
+        databaseReference.child("Choicestore").child("choicechina").child("choicestore_img").setValue("https://firebasestorage.googleapis.com/v0/b/duproject-a57a3.appspot.com/o/%EC%A4%91%EC%8B%9D%2F%ED%98%84%EC%A7%9C%EC%9E%A5%2F%ED%98%84%EC%A7%9C%EC%9E%A5.jpg?alt=media&token=cf0f85d9-60af-49dc-883b-f63252ab1d3d");
+        databaseReference.child("Choicestore").child("choicechina").child("choicestore_number").setValue("050-6518-8188");
+        databaseReference.child("Choicestore").child("choicechina").child("choicestore_time").setValue("11:30 ~ 20:30");
+        databaseReference.child("Choicestore").child("choicechina").child("choicestore_breaktime").setValue("14:00 ~ 15:00");
+    }
 }

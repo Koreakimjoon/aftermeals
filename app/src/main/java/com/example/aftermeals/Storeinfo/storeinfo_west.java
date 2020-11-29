@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class storeinfo_west extends AppCompatActivity {
+public class storeinfo_west extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton storeinfo_west_btn_back, storeinfo_west_btn_mirror;
     ImageView storeinfo_west_img_west1;
@@ -68,6 +69,7 @@ public class storeinfo_west extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         database = FirebaseDatabase.getInstance();
+        findViewById(R.id.storeinfo_west_btn_choice).setOnClickListener(this);
 
 
 
@@ -116,5 +118,17 @@ public class storeinfo_west extends AppCompatActivity {
 
         adapter = new StoreAdpater(arrayList, this,Listcount);
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View view) {
+        databaseReference = database.getReference();
+        databaseReference.child("Choicestore").child("choicewest").child("choicestore_name").setValue("BBQ 치킨");
+        databaseReference.child("Choicestore").child("choicewest").child("choicestore_img").setValue("https://firebasestorage.googleapis.com/v0/b/duproject-a57a3.appspot.com/o/%EC%B9%98%ED%82%A8%2F%EB%B9%84%EB%B9%84%ED%81%90%2F%EB%B9%84%EB%B9%84%ED%81%90.jpg?alt=media&token=b08b80e2-d959-4eb1-8ed6-5836f3ab7416");
+        databaseReference.child("Choicestore").child("choicewest").child("choicestore_number").setValue("050-4830-2028");
+        databaseReference.child("Choicestore").child("choicewest").child("choicestore_time").setValue("12:00 ~ 23:00");
+        databaseReference.child("Choicestore").child("choicewest").child("choicestore_breaktime").setValue("15:00 ~ 16:00");
+
+        Toast.makeText(this, "완료", Toast.LENGTH_SHORT).show();
     }
 }

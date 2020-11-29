@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class storeinfo_china4 extends AppCompatActivity {
+public class storeinfo_china4 extends AppCompatActivity implements View.OnClickListener {
 
 
     ImageButton storeinfo_china4_btn_back, storeinfo_china4_btn_mirror;
@@ -53,8 +53,8 @@ public class storeinfo_china4 extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        final String name = intent.getStringExtra("name");
-        final String number= intent.getStringExtra("number");
+        String name = intent.getStringExtra("name");
+        String number= intent.getStringExtra("number");
         String img = intent.getStringExtra("img");
         int Listcount = intent.getIntExtra("List_count",3);
 
@@ -69,6 +69,7 @@ public class storeinfo_china4 extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         database = FirebaseDatabase.getInstance();
+        findViewById(R.id.storeinfo_china_btn4_choice).setOnClickListener(this);
 
         storeinfo_china4_btn_mirror = (ImageButton) findViewById(R.id.storeinfo_china4_btn_mirror);
         storeinfo_china4_btn_back = (ImageButton) findViewById(R.id.storeinfo_china4_btn_back);
@@ -87,10 +88,8 @@ public class storeinfo_china4 extends AppCompatActivity {
         storeinfo_china4_btn_mirror.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(getApplicationContext(), payment.class);
-                intent2.putExtra("name",name);
-                intent2.putExtra("number",number);
-                startActivity(intent2);
+                Intent intent = new Intent(getApplicationContext(), payment.class);
+                startActivity(intent);
             }
         });
 
@@ -116,5 +115,15 @@ public class storeinfo_china4 extends AppCompatActivity {
         adapter = new StoreAdpater(arrayList, this,Listcount);
         recyclerView.setAdapter(adapter);
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        databaseReference = database.getReference();
+        databaseReference.child("Choicestore").child("choicechina4").child("choicestore_name").setValue("홍짜장");
+        databaseReference.child("Choicestore").child("choicechina4").child("choicestore_img").setValue("https://firebasestorage.googleapis.com/v0/b/duproject-a57a3.appspot.com/o/%EC%A4%91%EC%8B%9D%2F%ED%99%8D%EC%A7%9C%EC%9E%A5%2F%ED%99%8D%EC%A7%9C%EC%9E%A5.jpg?alt=media&token=96e6fa3d-3ccf-41f9-9f00-c89bb1734ea8");
+        databaseReference.child("Choicestore").child("choicechina4").child("choicestore_number").setValue("050-6672-0846");
+        databaseReference.child("Choicestore").child("choicechina4").child("choicestore_time").setValue("10:40 ~ 20:50");
+        databaseReference.child("Choicestore").child("choicechina4").child("choicestore_breaktime").setValue("16:00 ~ 17:00");
     }
 }

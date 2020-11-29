@@ -1,5 +1,6 @@
 package com.example.aftermeals.Store;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
@@ -57,6 +58,7 @@ public class StoreAdpater extends RecyclerView.Adapter<StoreAdpater.CustomViewHo
                         final Intent intent;
                         int count = holder.getAdapterPosition();
 
+
                         intent = new Intent(v.getContext(), Menuinfo.class);
                         intent.putExtra("menu_img", arrayList.get(position).getMenu_img()); //이미지를 인텐트 시키는곳에 정보를 menu_img로 넘김
                         intent.putExtra("menu_name", arrayList.get(position).getMenu_name()); //이름을 인텐트 시키는곳에 정보를 menu_name으로 넘김
@@ -64,11 +66,14 @@ public class StoreAdpater extends RecyclerView.Adapter<StoreAdpater.CustomViewHo
                         intent.putExtra("menu_price", arrayList.get(position).getMenu_price()); //가격을 인텐트 시키는곳에 정보를 menu_price으로 넘김
                         intent.putExtra("count",count); //해당 store adapter에서 포지션값을 count로 넘김
                         intent.putExtra("StorearrayList",store_count); //엑티비티인 storeinfo_***에서 값을 받아온것을 storearrayList로 넘김 조건문 쓸때 필요함.
-                        v.getContext().startActivity(intent);
-
+                        ((Activity) context).startActivityForResult(intent, 1);
             }
         });
 
+
+    }
+    public  void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("MyAdapter", "onActivityResult");
     }
 
     @Override
@@ -95,6 +100,7 @@ public class StoreAdpater extends RecyclerView.Adapter<StoreAdpater.CustomViewHo
         }
 
     }
+
 
 
 }

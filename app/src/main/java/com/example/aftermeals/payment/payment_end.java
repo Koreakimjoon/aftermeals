@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 
 import com.example.aftermeals.HomeActivity;
 import com.example.aftermeals.R;
+import com.example.aftermeals.main_bottom;
 
 public class payment_end extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class payment_end extends AppCompatActivity {
         payment_end_btn_gohome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                Intent intent = new Intent(getApplicationContext(), main_bottom.class);
                 startActivity(intent);
             }
         });

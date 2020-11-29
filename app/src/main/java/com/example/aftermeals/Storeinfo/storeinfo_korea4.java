@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class storeinfo_korea4 extends AppCompatActivity {
+public class storeinfo_korea4 extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton storeinfo_korea4_btn_back, storeinfo_korea4_btn_mirror;
     ImageView storeinfo_korea4_img_korea1;
@@ -68,6 +69,7 @@ public class storeinfo_korea4 extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         database = FirebaseDatabase.getInstance();
+        findViewById(R.id.storeinfo_korea4_btn_choice).setOnClickListener(this);
 
 
 
@@ -116,5 +118,17 @@ public class storeinfo_korea4 extends AppCompatActivity {
 
         adapter = new StoreAdpater(arrayList, this,Listcount);
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View view) {
+        databaseReference = database.getReference();
+        databaseReference.child("Choicestore").child("choicekorea4").child("choicestore_name").setValue("백채김치찌개");
+        databaseReference.child("Choicestore").child("choicekorea4").child("choicestore_img").setValue("https://firebasestorage.googleapis.com/v0/b/duproject-a57a3.appspot.com/o/%ED%95%9C%EC%8B%9D%2F%ED%95%9C%EC%8B%9D4%2F%EB%B0%B1%EC%B1%84%EA%B9%80%EC%B9%98%EC%B0%8C%EA%B0%9C.jpg?alt=media&token=1a87f47c-fc67-4004-b566-af36373703af");
+        databaseReference.child("Choicestore").child("choicekorea4").child("choicestore_number").setValue("031-722-5690");
+        databaseReference.child("Choicestore").child("choicekorea4").child("choicestore_time").setValue("11:00 ~ 22:30");
+        databaseReference.child("Choicestore").child("choicekorea4").child("choicestore_breaktime").setValue("15:00 ~ 17:00");
+
+        Toast.makeText(this, "완료", Toast.LENGTH_SHORT).show();
     }
 }

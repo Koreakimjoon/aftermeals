@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class storeinfo_korea2 extends AppCompatActivity {
+public class storeinfo_korea2 extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton storeinfo_korea2_btn_back, storeinfo_korea2_btn_mirror;
     ImageView storeinfo_korea2_img_korea1;
@@ -68,6 +69,7 @@ public class storeinfo_korea2 extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         database = FirebaseDatabase.getInstance();
+        findViewById(R.id.storeinfo_korea2_btn_choice).setOnClickListener(this);
 
 
 
@@ -116,5 +118,17 @@ public class storeinfo_korea2 extends AppCompatActivity {
 
         adapter = new StoreAdpater(arrayList, this,Listcount);
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View view) {
+        databaseReference = database.getReference();
+        databaseReference.child("Choicestore").child("choicekorea2").child("choicestore_name").setValue("차돌풍");
+        databaseReference.child("Choicestore").child("choicekorea2").child("choicestore_img").setValue("https://firebasestorage.googleapis.com/v0/b/duproject-a57a3.appspot.com/o/%ED%95%9C%EC%8B%9D%2F%ED%95%9C%EC%8B%9D2%2F%EC%B0%A8%EB%8F%8C%ED%92%8D.jpg?alt=media&token=c5f63de7-5fd2-48e5-9c43-ef219790eb3e");
+        databaseReference.child("Choicestore").child("choicekorea2").child("choicestore_number").setValue("031-759-7292");
+        databaseReference.child("Choicestore").child("choicekorea2").child("choicestore_time").setValue("11:00 ~ 24:00");
+        databaseReference.child("Choicestore").child("choicekorea2").child("choicestore_breaktime").setValue("15:00 ~ 17:00");
+
+        Toast.makeText(this, "완료", Toast.LENGTH_SHORT).show();
     }
 }

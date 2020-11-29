@@ -475,48 +475,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:text="결제수단 선택"
-                    android:textColor="#111111"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <ToggleButton
-                    android:id="@+id/payment_togglebtn_btn0"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:onClick="onToggleClicked"
-                    android:text="토스"
-                    android:textOff="토스"
-                    android:textOn="토스" />
-
-                <ToggleButton
-                    android:id="@+id/payment_togglebtn_btn1"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:onClick="onToggleClicked"
-                    android:text="네이버페이"
-                    android:textOff="네이버페이"
-                    android:textOn="네이버페이" />
-
-                <ToggleButton
-                    android:id="@+id/payment_togglebtn_btn2"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:onClick="onToggleClicked"
-                    android:text="카카오페이"
-                    android:textOff="카카오페이"
-                    android:textOn="카카오페이" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -541,8 +500,8 @@
 
                 <TextView
                     android:id="@+id/payment_textview_menu0"
-                    android:layout_width="150dp"
-                    android:layout_height="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:text="아몰랑"
                     android:textColor="#111111"
@@ -550,55 +509,20 @@
 
                 <TextView
                     android:id="@+id/payment_textview_price0"
-                    android:layout_width="150dp"
-                    android:layout_height="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:singleLine="true"
                     android:text="10,000원"
                     android:textColor="#111111"
                     android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/payment_textview_menu1"
-                    android:layout_width="150dp"
-                    android:layout_height="20dp"
-                    android:singleLine="true"
-                    android:text="아몰랑2"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/payment_textview_price1"
-                    android:layout_width="150dp"
-                    android:layout_height="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:singleLine="true"
-                    android:text="20,000원"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal" />
 
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="20dp"
-                    android:singleLine="true"
-                    android:text="총 합계"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/payment_textview_priceall"
-                    android:layout_width="150dp"
-                    android:layout_height="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:singleLine="true"
-                    android:text="30,000원"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
 
                 <Button
                     android:id="@+id/payment_btn_payment"
