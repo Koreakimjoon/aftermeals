@@ -80,7 +80,6 @@ public class payment extends AppCompatActivity {
 
 
         payment_textview_address.setText(name);
-        payment_textview_price0.setText(china_pyment);
         payment_textview_storenumber.setText(number);
 
 
@@ -103,9 +102,9 @@ public class payment extends AppCompatActivity {
                         .setBootExtra(bootExtra)
                         .setUX(UX.PG_DIALOG)
 //                .setUserPhone("010-1234-5678") // 구매자 전화번호
-                        .setName("맥북프로's 임다") // 결제할 상품명
+                        .setName("레드착착") // 결제할 상품명
                         .setOrderId("1234") // 결제 고유번호expire_month
-                        .setPrice(10000) // 결제할 금액
+                        .setPrice(26000) // 결제할 금액
                         .addItem("마우's 스", 1, "ITEM_CODE_MOUSE", 100) // 주문정보에 담길 상품정보, 통계를 위해 사용
                         .addItem("키보드", 1, "ITEM_CODE_KEYBOARD", 200, "패션", "여성상의", "블라우스") // 주문정보에 담길 상품정보, 통계를 위해 사용
                         .onConfirm(new ConfirmListener() { // 결제가 진행되기 바로 직전 호출되는 함수로, 주로 재고처리 등의 로직이 수행

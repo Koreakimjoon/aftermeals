@@ -49,8 +49,8 @@ public class storeinfo_china extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_storeinfo_china);
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String number= intent.getStringExtra("number");
+        final String name = intent.getStringExtra("name");
+        final String number= intent.getStringExtra("number");
         String img = intent.getStringExtra("img");
         int Listcount = intent.getIntExtra("List_count",0);
 
@@ -92,6 +92,8 @@ public class storeinfo_china extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), payment.class);
+                intent.putExtra("name",name);
+                intent.putExtra("number",number);
                 startActivity(intent);
             }
         });

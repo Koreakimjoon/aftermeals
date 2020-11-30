@@ -19,7 +19,6 @@ public class main_bottom extends AppCompatActivity {
     private HomeActivity activity_main;   // 홈엑티비티로 전환 -서강호
     private home_bottomNavigation_choicestore activity_bottomNavigation_choicestore;  // 찜한가게로 전환 -서강호
     private home_bottomNavigation_post activity_home_bottomNavigation_post; // 예약 내역으로 전환 -서강호
-    private home_bottomNavigation_mypage activity_home_bottomNavigation_mypage; // 마이페이지로 전환 -서강호
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +39,6 @@ public class main_bottom extends AppCompatActivity {
                     case R.id.mainbottom_item_post:
                         setFrag(2);
                         break;
-                    case R.id.mainbottom_item_mypage:
-                        setFrag(3);
-                        break;
                 }
                 return true;
             }
@@ -51,7 +47,6 @@ public class main_bottom extends AppCompatActivity {
         activity_main = new HomeActivity();
         activity_bottomNavigation_choicestore = new home_bottomNavigation_choicestore();
         activity_home_bottomNavigation_post = new home_bottomNavigation_post();
-        activity_home_bottomNavigation_mypage = new home_bottomNavigation_mypage();
         setFrag(0); // 첫 프래그먼트 화면을 무엇으로 지정해 줄것인지 선택 -서강호
 
         Intent intent = getIntent();
@@ -77,10 +72,6 @@ public class main_bottom extends AppCompatActivity {
                 break;
             case 2:
                 ft.replace(R.id.main_frame, activity_home_bottomNavigation_post);
-                ft.commit();
-                break;
-            case 3:
-                ft.replace(R.id.main_frame, activity_home_bottomNavigation_mypage);
                 ft.commit();
                 break;
         }

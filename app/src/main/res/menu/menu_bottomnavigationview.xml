@@ -14,10 +14,6 @@
         android:id="@+id/mainbottom_item_post"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_notifications_24"
-        android:title="예약내역" />
-    <item
-        android:id="@+id/mainbottom_item_mypage"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_settings_24"
-        android:title="My식후경" />
+        android:title="게시판" />
+
 </menu>

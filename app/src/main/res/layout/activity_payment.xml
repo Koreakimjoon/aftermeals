@@ -67,9 +67,9 @@
 
                 <TextView
                     android:id="@+id/payment_textview_roadaddress"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="[도로명]어딘가"
+                    android:text="[도로명] 경기 성남시 수정구 복정로 83 1층"
                     android:textColor="#505050"
                     android:textSize="15sp" />
 
@@ -111,7 +111,7 @@
                     android:id="@+id/payment_textview_customername"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:text="하성빈"
+                    android:text="김준"
                     android:textColor="#111111"
                     android:textSize="20sp"/>
 
@@ -119,18 +119,18 @@
                     android:id="@+id/payment_textview_customernumber"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="010-2345-2345"
+                    android:text="010-9403-1340"
+                    android:textColor="#505050"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/payment_textview_customerhome"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="서울 중구 신당6동 62-26"
                     android:textColor="#505050"
                     android:textSize="15sp" />
 
-                <Button
-                    android:id="@+id/payment_btn_numberchange"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#000000"
-                    android:text="변경"
-                    android:textColor="#FFFFFF" />
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -503,7 +503,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:text="아몰랑"
+                    android:text="레드착착"
                     android:textColor="#111111"
                     android:textSize="20sp" />
 
@@ -513,7 +513,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:singleLine="true"
-                    android:text="10,000원"
+                    android:text="26,000원"
                     android:textColor="#111111"
                     android:textSize="20sp" />
 
