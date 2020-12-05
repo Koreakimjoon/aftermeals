@@ -1,9 +1,10 @@
-package com.example.aftermeals.Storeinfo;  // 제작 가게 정보 - 서강호
+package com.example.aftermeals.Storeinfo;  // 제작 가게 정보 -김준
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,7 +31,8 @@ import java.util.ArrayList;
 
 public class storeinfo_west extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton storeinfo_west_btn_back, storeinfo_west_btn_mirror;
+    ImageButton storeinfo_west_btn_back;
+    Button storeinfo_west_btn_mirror;
     ImageView storeinfo_west_img_west1;
     TextView storeinfo_west_text_storename, storeinfo_west_text_storenumber;
 
@@ -52,8 +54,8 @@ public class storeinfo_west extends AppCompatActivity implements View.OnClickLis
         storeinfo_west_img_west1 = findViewById(R.id.storeinfo_west_img_west1);
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String number= intent.getStringExtra("number");
+        final String name = intent.getStringExtra("name");
+        final String number= intent.getStringExtra("number");
         String img = intent.getStringExtra("img");
         int Listcount = intent.getIntExtra("List_count",12);
         Glide.with(this).load(img).into(storeinfo_west_img_west1);
@@ -73,7 +75,7 @@ public class storeinfo_west extends AppCompatActivity implements View.OnClickLis
 
 
 
-        storeinfo_west_btn_mirror = (ImageButton) findViewById(R.id.storeinfo_west_btn_mirror);
+        storeinfo_west_btn_mirror = (Button) findViewById(R.id.storeinfo_west_btn_mirror);
         storeinfo_west_btn_back = (ImageButton) findViewById(R.id.storeinfo_west_btn_back);
 
 
@@ -91,6 +93,8 @@ public class storeinfo_west extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), payment.class);
+                intent.putExtra("name",name);
+                intent.putExtra("number",number);
                 startActivity(intent);
             }
         });

@@ -1,4 +1,4 @@
-package com.example.aftermeals.Storeinfo;  // 제작 가게 정보 - 서강호 하성빈손댐
+package com.example.aftermeals.Storeinfo;  // 제작 가게 정보 - -김준
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,7 +35,8 @@ import java.util.Map;
 
 public class storeinfo_japan extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton storeinfo_japan_btn_back, storeinfo_japan_btn_mirror;
+    ImageButton storeinfo_japan_btn_back;
+    Button storeinfo_japan_btn_mirror;
     ImageView storeinfo_japan_img_japan1;
     TextView storeinfo_japan_text_storename, storeinfo_japan_text_storenumber;
 
@@ -77,7 +78,7 @@ public class storeinfo_japan extends AppCompatActivity implements View.OnClickLi
 
 
 
-        storeinfo_japan_btn_mirror = (ImageButton) findViewById(R.id.storeinfo_japan_btn_mirror);
+        storeinfo_japan_btn_mirror = (Button) findViewById(R.id.storeinfo_japan_btn_mirror);
         storeinfo_japan_btn_back = (ImageButton) findViewById(R.id.storeinfo_japan_btn_back);
         findViewById(R.id.storeinfo_japan_btn_choice).setOnClickListener(this);
 

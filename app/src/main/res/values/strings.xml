@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AfterMeals</string>
+    <string name="app_name">식후경</string>
     <string name="title_activity_login">식후경 로그인</string>
     <string name="prompt_email">이메일</string>
     <string name="prompt_password">비밀번호</string>

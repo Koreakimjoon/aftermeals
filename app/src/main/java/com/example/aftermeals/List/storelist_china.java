@@ -1,4 +1,4 @@
-package com.example.aftermeals.List; //추후 제작 -준
+package com.example.aftermeals.List; //-김준
 
 import android.os.Bundle;
 import android.util.Log;

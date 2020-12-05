@@ -2,6 +2,7 @@ package com.example.aftermeals.payment;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -43,12 +44,24 @@ public class payment extends AppCompatActivity {
     TextView payment_textview_address, payment_textview_storenumber;
     private int stuck =10;
     Button payment_togglebtn_btn0;
+    Button reservation_btn_41; Button reservation_btn_42; Button reservation_btn_43,reservation_btn_44;
+    Button reservation_btn_couple1; Button reservation_btn_couple2;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+
+        reservation_btn_41 = findViewById(R.id.reservation_btn_41);
+        reservation_btn_42 = findViewById(R.id.reservation_btn_42);
+        reservation_btn_43 = findViewById(R.id.reservation_btn_43);
+        reservation_btn_44 = findViewById(R.id.reservation_btn_44);
+        reservation_btn_couple1 = findViewById(R.id.reservation_btn_couple1);
+        reservation_btn_couple2 = findViewById(R.id.reservation_btn_couple2);
+        payment_btn_payment = findViewById(R.id.payment_btn_payment);
+
+
 
         Intent intent = getIntent();
         String china_pyment  = intent.getStringExtra("china_pyment");
@@ -155,5 +168,61 @@ public class payment extends AppCompatActivity {
                         .request();
             }
         });
+        // 좌석 테이블 버튼 눌렀을 때 색상 변경 - onTouchListener - 학주
+        reservation_btn_41.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Toast.makeText(getApplicationContext(), "4인 좌석 선택 됨", Toast.LENGTH_SHORT).show();
+                reservation_btn_41.setBackgroundResource(R.drawable.tablepressed);
+                }
+        });
+
+        // 좌석 테이블 버튼 눌렀을 때 색상 변경 - onTouchListener - 학주
+        reservation_btn_42.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "4인 좌석 선택 됨", Toast.LENGTH_SHORT).show();
+                reservation_btn_42.setBackgroundResource(R.drawable.tablepressed);
+            }
+        });
+
+        // 좌석 테이블 버튼 눌렀을 때 색상 변경 - onTouchListener - 학주
+        reservation_btn_43.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "4인 좌석 선택 됨", Toast.LENGTH_SHORT).show();
+                reservation_btn_43.setBackgroundResource(R.drawable.tablepressed);
+            }
+        });
+        reservation_btn_44.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "4인 좌석 선택 됨", Toast.LENGTH_SHORT).show();
+                reservation_btn_44.setBackgroundResource(R.drawable.tablepressed);
+            }
+        });
+
+
+        // 좌석 테이블 버튼 눌렀을 때 색상 변경 - onTouchListener - 학주
+        reservation_btn_couple1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "2인 좌석 선택 됨", Toast.LENGTH_SHORT).show();
+                reservation_btn_couple1.setBackgroundResource(R.drawable.tablepressed);
+            }
+        });
+
+        // 좌석 테이블 버튼 눌렀을 때 색상 변경 - onTouchListener - 학주
+
+
+        reservation_btn_couple2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "2인 좌석 선택 됨", Toast.LENGTH_SHORT).show();
+                reservation_btn_couple2.setBackgroundResource(R.drawable.tablepressed);
+            }
+        });
+
+
     }
 }

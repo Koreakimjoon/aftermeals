@@ -7,6 +7,7 @@
     tools:context=".home_bottomNavigation_post">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:padding="30dp"
         android:id="@+id/post_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

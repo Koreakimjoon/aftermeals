@@ -1,9 +1,10 @@
-package com.example.aftermeals.Storeinfo;  // 제작 가게 정보 - 서강호
+package com.example.aftermeals.Storeinfo;  // 제작 가게 정보 -김준
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,7 +31,8 @@ import java.util.ArrayList;
 
 public class storeinfo_korea extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton storeinfo_korea_btn_back, storeinfo_korea_btn_mirror;
+    ImageButton storeinfo_korea_btn_back;
+    Button storeinfo_korea_btn_mirror;
     ImageView storeinfo_korea_img_korea1;
     TextView storeinfo_korea_text_storename, storeinfo_korea_text_storenumber;
 
@@ -73,7 +75,7 @@ public class storeinfo_korea extends AppCompatActivity implements View.OnClickLi
 
 
 
-        storeinfo_korea_btn_mirror = (ImageButton) findViewById(R.id.storeinfo_korea_btn_mirror);
+        storeinfo_korea_btn_mirror = (Button) findViewById(R.id.storeinfo_korea_btn_mirror);
         storeinfo_korea_btn_back = (ImageButton) findViewById(R.id.storeinfo_korea_btn_back);
 
 

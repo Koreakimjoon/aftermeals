@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -16,29 +19,6 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:gravity="center_vertical"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <TextView
-                    android:paddingLeft="14dp"
-                    android:id="@+id/main_textview_address"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="현재위치(주소)"
-                    android:textSize="15sp"
-                    android:layout_gravity="center_vertical"
-                    android:lineSpacingExtra="6sp"
-                    android:textColor="#4b4b4b"/>
-                <ImageView
-                    android:paddingLeft="7dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/address_icon"/>
-            </LinearLayout>
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -53,62 +33,70 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
 
-    <GridLayout
-        android:id="@+id/main_grid_foodtype"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="241dp"
-        android:columnCount="4"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:rowCount="3"
-        android:layout_marginBottom="15dp">
+        android:layout_gravity="center">
 
 
         <ImageButton
             android:id="@+id/main_grid_img0"
             android:layout_width="100dp"
+            android:layout_weight="1"
             android:layout_height="120dp"
             android:layout_columnWeight="1"
-            app:srcCompat="@drawable/korean"
+            app:srcCompat="@drawable/korea"
             android:background="#ffffff"
-            android:scaleType="centerInside"
+            android:scaleType="fitXY"
             />
 
         <ImageButton
             android:id="@+id/main_grid_img1"
             android:layout_width="100dp"
+            android:layout_weight="1"
             android:layout_height="120dp"
             android:layout_columnWeight="1"
             app:srcCompat="@drawable/japan"
             android:background="#ffffff"
-            android:scaleType="centerInside"
+            android:scaleType="fitXY"
             />
 
         <ImageButton
             android:id="@+id/main_grid_img2"
             android:layout_width="100dp"
+            android:layout_weight="1"
             android:layout_height="120dp"
             android:layout_columnWeight="1"
             app:srcCompat="@drawable/china"
             android:background="#ffffff"
-            android:scaleType="centerInside"
+            android:scaleType="fitXY"
             />
 
         <ImageButton
             android:id="@+id/main_grid_img3"
             android:layout_width="100dp"
+            android:layout_weight="1"
             android:layout_height="120dp"
             android:layout_columnWeight="1"
-            app:srcCompat="@drawable/chicken"
+            app:srcCompat="@drawable/kichen"
             android:background="#ffffff"
-            android:scaleType="centerInside"
+            android:scaleType="fitXY"
             />
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
         <ImageButton
             android:id="@+id/main_grid_img4"
             android:layout_width="100dp"
+            android:layout_weight="1"
             android:layout_height="120dp"
             android:layout_columnWeight="1"
-            app:srcCompat="@drawable/pizza"
+            app:srcCompat="@drawable/piza"
             android:background="#ffffff"
             android:scaleType="centerCrop"
             />
@@ -117,8 +105,9 @@
             android:id="@+id/main_grid_img5"
             android:layout_width="100dp"
             android:layout_height="120dp"
+            android:layout_weight="1"
             android:layout_columnWeight="1"
-            app:srcCompat="@drawable/meat"
+            app:srcCompat="@drawable/cafe"
             android:background="#ffffff"
             android:scaleType="centerCrop"
             />
@@ -127,8 +116,9 @@
             android:id="@+id/main_grid_img6"
             android:layout_width="100dp"
             android:layout_height="120dp"
+            android:layout_weight="1"
             android:layout_columnWeight="1"
-            app:srcCompat="@drawable/snack_bar"
+            app:srcCompat="@drawable/fastfood"
             android:background="#ffffff"
             android:scaleType="centerCrop"
             />
@@ -137,13 +127,14 @@
             android:id="@+id/main_grid_img7"
             android:layout_width="100dp"
             android:layout_height="120dp"
+            android:layout_weight="1"
             android:layout_columnWeight="1"
-            app:srcCompat="@drawable/soup"
+            app:srcCompat="@drawable/dzert"
             android:layout_marginBottom="15dp"
             android:background="#ffffff"
             android:scaleType="centerCrop"
             />
-    </GridLayout>
+    </LinearLayout>
 
     <SearchView
         android:layout_width="match_parent"

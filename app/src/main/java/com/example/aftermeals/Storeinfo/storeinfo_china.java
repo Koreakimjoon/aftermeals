@@ -1,10 +1,11 @@
-package com.example.aftermeals.Storeinfo;  // 제작 가게 정보 - 서강호
+package com.example.aftermeals.Storeinfo;  // 제작 가게 정보 -김준
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,7 +31,8 @@ import java.util.ArrayList;
 
 public class storeinfo_china extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton storeinfo_china_btn_back, storeinfo_china_btn_mirror;
+    ImageButton storeinfo_china_btn_back;
+    Button  storeinfo_china_btn_mirror;
     ImageView storeinfo_china_img;
     TextView storeinfo_china_text_storename,storeinfo_china_text_storenumber;
     private RecyclerView recyclerView;
@@ -74,7 +76,7 @@ public class storeinfo_china extends AppCompatActivity implements View.OnClickLi
         database = FirebaseDatabase.getInstance();
         findViewById(R.id.storeinfo_china_btn_choice).setOnClickListener(this);
 
-        storeinfo_china_btn_mirror = (ImageButton) findViewById(R.id.storeinfo_china_btn_mirror);
+        storeinfo_china_btn_mirror = (Button) findViewById(R.id.storeinfo_china_btn_mirror);
         storeinfo_china_btn_back = (ImageButton) findViewById(R.id.storeinfo_china_btn_back);
 
 

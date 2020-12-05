@@ -51,13 +51,13 @@ public class ListAdapter_china extends RecyclerView.Adapter<ListAdapter_china.Cu
     @Override
     public void onBindViewHolder(@NonNull final CustomViewHolder holder, final int position) {
 
-        Glide.with(holder.itemView) //이미지를 glide해서 sotrelist_china_img에 해당 받아온 값을 대입
+        Glide.with(holder.itemView) //이미지를 glide해서 sotrelist_china_img에 해당 받아온 값을 대입 -김준
                 .load(arrayList.get(position).getStorelist_img())
                 .into(holder.storelist_china_img);
-        holder.storelist_china_name.setText(arrayList.get(position).getStorelist_name()); //파이어베이스에 해당 값을 불러와서 이름을 대입
-        holder.storelist_china_time.setText(String.valueOf(arrayList.get(position).getStorelist_time())); //파이어베이스에 해당 값을 불러와서 시간을 대입
-        holder.storelist_china_breaktime.setText(arrayList.get(position).getStorelist_breaktime()); //파이어베이스에 해당 값을 불러와서 휴계시간을 대입
-        holder.storelist_china_number.setText(arrayList.get(position).getStorelist_number()); //파이어베이스에 해당 값을 불러와서 전화번호를 대입
+        holder.storelist_china_name.setText(arrayList.get(position).getStorelist_name()); //파이어베이스에 해당 값을 불러와서 이름을 대입 -김준
+        holder.storelist_china_time.setText(String.valueOf(arrayList.get(position).getStorelist_time())); //파이어베이스에 해당 값을 불러와서 시간을 대입 -김준
+        holder.storelist_china_breaktime.setText(arrayList.get(position).getStorelist_breaktime()); //파이어베이스에 해당 값을 불러와서 휴계시간을 대입 -김준
+        holder.storelist_china_number.setText(arrayList.get(position).getStorelist_number()); //파이어베이스에 해당 값을 불러와서 전화번호를 대입-김준
 
 
        holder.storelist_china.setOnClickListener(new View.OnClickListener(){
@@ -65,14 +65,14 @@ public class ListAdapter_china extends RecyclerView.Adapter<ListAdapter_china.Cu
             public void onClick(View v) {
                 final Intent intent;
 
-                int count = holder.getAdapterPosition(); //리싸이클러뷰에 해당 포지션 값을 count로 셋팅
+                int count = holder.getAdapterPosition(); //리싸이클러뷰에 해당 포지션 값을 count로 셋팅-김준
 
             switch (position) {
                 case 0: //포지션값에 대한 반복문
-                    intent = new Intent(v.getContext(), storeinfo_china.class); //해당 클래스로 인텐트 시킴
-                    intent.putExtra("img",arrayList.get(position).getStorelist_img()); //이미지를 img라는 이름에 값을 저장하여 인텐트 시킨 클래스로 값을 넘김
-                    intent.putExtra("name",arrayList.get(position).getStorelist_name()); //이름을 name이라는 이름에 값을 저장하여 인텐트 시킨 클래스로 값을 넘김
-                    intent.putExtra("number",arrayList.get(position).getStorelist_number()); //전화번호를 number라는 이름에 값을 저장하여 인텐트시킨 클래스로 값을 넘김
+                    intent = new Intent(v.getContext(), storeinfo_china.class); //해당 클래스로 인텐트 시킴-김준
+                    intent.putExtra("img",arrayList.get(position).getStorelist_img()); //이미지를 img라는 이름에 값을 저장하여 인텐트 시킨 클래스로 값을 넘김-김준
+                    intent.putExtra("name",arrayList.get(position).getStorelist_name()); //이름을 name이라는 이름에 값을 저장하여 인텐트 시킨 클래스로 값을 넘김-김준
+                    intent.putExtra("number",arrayList.get(position).getStorelist_number()); //전화번호를 number라는 이름에 값을 저장하여 인텐트시킨 클래스로 값을 넘김-김준
                     v.getContext().startActivity(intent);
                     break;
                 case 1:
